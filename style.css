@@ -1,289 +1,116 @@
-/* 1. Variáveis de Cores (Paleta de Rosa) */
-:root {
-    --rosa-principal: #FF69B4; /* HotPink - Destaque vibrante */
-    --rosa-secundario: #FFC0CB; /* Pink - Mais suave, para fundo/detalhes */
-    --rosa-escuro: #C71585; /* Rosa mais fechado - para texto/hover */
-    --fundo-claro: #FADADD; /* Fundo bem claro - dá leveza */
-    --texto-escuro: #333333;
-    --texto-claro: #FFFFFF;
-    --sombra-leve: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+/* Adição para a seção de Currículo (Experiência/Timeline) */
 
-/* 2. Reset Básico e Tipografia */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.6;
-    color: var(--texto-escuro);
+.timeline {
     background-color: var(--fundo-claro);
-    scroll-behavior: smooth; /* Para rolagem suave entre seções */
 }
 
-h1, h2, h3 {
-    margin-bottom: 0.8em;
-    color: var(--rosa-escuro);
-}
-
-a {
-    text-decoration: none;
-    color: var(--rosa-principal);
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: var(--rosa-escuro);
-}
-
-/* 3. Estilos do Cabeçalho (Navbar Dinâmica) */
-.navbar {
-    background-color: var(--texto-claro);
-    box-shadow: var(--sombra-leve);
-    padding: 15px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky; /* Navbar Fixa */
-    top: 0;
-    z-index: 1000;
-}
-
-.logo {
-    font-size: 1.5em;
-    font-weight: 700;
-    color: var(--rosa-principal);
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-}
-
-.nav-links li {
-    margin-left: 20px;
-}
-
-.nav-links a {
-    color: var(--texto-escuro);
-    font-weight: 400;
-    padding: 5px 10px;
-}
-
-.nav-links a:hover {
-    color: var(--rosa-principal);
-    border-bottom: 2px solid var(--rosa-principal);
-}
-
-/* 4. Estilo da Seção HERO (Destaque) */
-.hero {
-    min-height: 80vh;
-    padding: 80px 5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--rosa-secundario);
-}
-
-.hero-content {
-    max-width: 50%;
-    animation: fadeInContent 1s ease-out; /* Animação simples */
-}
-
-.hero h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
-    color: var(--texto-claro); /* Texto claro no fundo rosa */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-.hero p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-    color: var(--texto-claro);
-}
-
-.hero-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 50%; /* Forma da imagem para um toque moderno */
-    box-shadow: 0 0 0 10px var(--rosa-principal); /* Borda rosa chamativa */
-    animation: zoomInImage 1s ease-out;
-}
-
-/* 5. Estilo dos Botões (CTA) */
-.btn-cta {
-    display: inline-block;
-    background-color: var(--rosa-principal);
-    color: var(--texto-claro);
-    padding: 12px 25px;
-    border-radius: 5px;
-    font-weight: 700;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.btn-cta:hover {
-    background-color: var(--rosa-escuro);
-    transform: translateY(-2px); /* Efeito de elevação */
-}
-
-/* 6. Estilo das Seções de Conteúdo */
-.content-section {
-    padding: 80px 5%;
-    text-align: center;
-}
-
-.content-section h2 {
-    font-size: 2.5em;
-    margin-bottom: 40px;
+.timeline-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 0 20px;
     position: relative;
 }
 
-.content-section h2::after {
+/* Linha central da Timeline */
+.timeline-container::before {
     content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: var(--rosa-principal);
-    margin: 10px auto 0;
-}
-
-/* 7. Estilo da Seção Sobre Mim */
-.about-flex {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-.about-flex p {
-    flex: 1;
-}
-
-/* 8. Estilo da Seção Serviços (Cards Dinâmicos) */
-.services {
+    position: absolute;
+    width: 3px;
     background-color: var(--rosa-secundario);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1.5px;
 }
 
-.card-container {
-    display: flex;
-    justify-content: space-around;
-    gap: 30px;
-    flex-wrap: wrap; /* Para ser responsivo */
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    margin-bottom: 30px;
 }
 
-.card {
-    background-color: var(--texto-claro);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: var(--sombra-leve);
-    width: calc(33% - 20px);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Bolinha de destaque na linha do tempo */
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    right: -7.5px;
+    background-color: var(--rosa-principal);
+    border: 3px solid var(--texto-claro);
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Posicionamento dos itens à esquerda */
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+/* Posicionamento dos itens à direita */
+.timeline-item:nth-child(even) {
+    left: 50%;
     text-align: left;
+    padding-left: 60px; /* Ajuste o padding para não conflitar com a linha */
+    padding-right: 20px;
 }
 
-.card:hover {
-    transform: translateY(-10px); /* Efeito de destaque ao passar o mouse */
-    box-shadow: 0 10px 20px rgba(255, 105, 180, 0.4); /* Sombra rosa forte */
+/* Ajuste da bolinha para itens à direita */
+.timeline-item:nth-child(even)::after {
+    left: -7.5px;
+    right: auto;
 }
 
-.card h3 {
-    color: var(--rosa-principal);
+.timeline-item h3 {
+    color: var(--rosa-escuro);
+    margin-bottom: 5px;
 }
 
-/* 9. Estilo da Seção Contato (Formulário) */
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
-    padding: 15px;
-    border: 2px solid var(--rosa-secundario);
-    border-radius: 5px;
-    font-size: 1em;
-    transition: border-color 0.3s ease;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: var(--rosa-principal);
-    outline: none;
-}
-
-/* 10. Rodapé */
-footer {
-    background-color: var(--rosa-escuro);
-    color: var(--texto-claro);
-    text-align: center;
-    padding: 20px;
+.timeline-item .empresa-data {
+    color: var(--texto-escuro);
     font-size: 0.9em;
+    margin-bottom: 10px;
 }
 
-/* 11. Media Queries (Responsividade) */
+.timeline-item ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+.timeline-item.education {
+    border-left: 5px solid var(--rosa-principal);
+    padding-left: 20px;
+    margin-left: 20px;
+}
+.timeline-item.education::after {
+    right: auto;
+    left: auto;
+}
+
+/* Responsividade da Timeline */
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-    }
-    .nav-links {
-        margin-top: 10px;
-    }
-    .nav-links li {
-        margin: 0 10px;
-    }
-    
-    .hero {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .hero-content, .hero-image {
-        max-width: 100%;
+    .timeline-container::before {
+        left: 10px; /* Move a linha para a esquerda */
     }
 
-    .hero-image {
-        margin-top: 30px;
+    .timeline-item {
+        width: 100%; /* Ocupa a largura total */
+        padding-left: 40px; /* Espaço para o ponto e a linha */
+        left: 0 !important;
     }
 
-    .about-flex {
-        flex-direction: column;
+    .timeline-item::after {
+        left: 7px; /* Alinha o ponto à linha */
+        right: auto;
     }
 
-    .card {
-        width: 100%;
-    }
-}
-
-/* 12. Animações (Dinamismo) */
-@keyframes fadeInContent {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes zoomInImage {
-    from {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
+    .timeline-item:nth-child(even) {
+        padding-left: 40px; /* Mantém o padding esquerdo */
+        padding-right: 10px;
+        text-align: left;
     }
 }
