@@ -3,11 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ROSA-DEV</title>
+    <title>Sua Apresentação Profissional - Tons de Rosa</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    olá mundo
-    
+
+    <header class="navbar">
+        <div class="logo">Meu Portfólio</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre Mim</a></li>
+                <li><a href="#servicos">Serviços/Habilidades</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Olá, eu sou **[Seu Nome]**</h1>
+            <p>Seu Slogan Profissional Curto e Impactante.</p>
+            <a href="#contato" class="btn-cta">Fale Comigo</a>
+        </div>
+        <div class="hero-image">
+            <img src="placeholder-img.jpg" alt="Imagem profissional de [Seu Nome]">
+        </div>
+    </section>
+
+    <section id="sobre" class="content-section about">
+        <h2>🌸 Quem Eu Sou</h2>
+        <div class="about-flex">
+            <p>Aqui você detalha sua trajetória, paixões e o que te motiva profissionalmente. Mantenha o tom profissional, mas pessoal. **Use parágrafos curtos.**</p>
+            <p>Mencione seus principais valores e a experiência que você traz para a mesa. Este é um bom lugar para usar uma foto de perfil menor.</p>
+        </div>
+    </section>
+
+    <section id="servicos" class="content-section services">
+        <h2>🛠️ O Que Eu Faço</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>Design Moderno</h3>
+                <p>Criação de interfaces bonitas e funcionais com foco na experiência do usuário.</p>
+            </div>
+            <div class="card">
+                <h3>Desenvolvimento Web</h3>
+                <p>Desenvolvimento de sites responsivos e otimizados usando as melhores práticas de HTML e CSS.</p>
+            </div>
+            <div class="card">
+                <h3>Consultoria Estratégica</h3>
+                <p>Ajudo a definir a melhor estratégia digital para atingir seus objetivos de negócio.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="content-section contact">
+        <h2>💌 Entre em Contato</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Seu Nome" required>
+            <input type="email" placeholder="Seu Email" required>
+            <textarea placeholder="Sua Mensagem..." rows="5" required></textarea>
+            <button type="submit" class="btn-cta">Enviar Mensagem</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Seu Nome. Todos os direitos reservados. Design com 💖 em Rosa.</p>
+    </footer>
+
 </body>
 </html>
